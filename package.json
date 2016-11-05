@@ -2,6 +2,9 @@
   "name": "nodejs-express-elasticsearch",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": ">=6.9.1"
+  },
   "scripts": {
     "populate": "node ./scripts/populate.js",
     "start": "npm run populate && node ./bin/www"

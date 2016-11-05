@@ -15,6 +15,10 @@ const deleteIndex = (exist, cb) => {
   client.indices.delete({ index }, err => cb(err));
 };
 
+const createIndex = (cb) => {
+  client.indices.create({ index }, err => cb(err));
+};
+
 const getLibraries = (cb) => {
   log.info('Requesting libraries');
   request
@@ -31,7 +35,7 @@ const getLibraries = (cb) => {
 const create = (libraries, cb) => {
   log.info(`Creating ${index} index`);
   async.eachSeries(libraries, (library, cb) => {
-    client.create({
+    client.index({
       index,
       type: 'library',
       id: Date.now(),
@@ -43,6 +47,7 @@ const create = (libraries, cb) => {
 async.waterfall([
   async.apply(existExist),
   async.apply(deleteIndex),
+  async.apply(createIndex),
   async.apply(getLibraries),
   async.apply(create),
 ], (err) => {

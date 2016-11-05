@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1.title Search cdnjs Library Repository
+
+  form.search(action="/" method="GET")
+    input.search__input(type="text" name="search")
+
+  if libraries
+    table.pure-table.result
+      thead
+        tr
+          th score
+          th name
+          th latest link
+      tbody
+        each data in libraries
+          - library = data._source
+          tr
+            td #{ data._score }
+            td #{ library.name }
+            td
+              a.result__link(href=`${ library.latest }`) #{ library.latest }

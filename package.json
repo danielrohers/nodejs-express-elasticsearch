@@ -10,16 +10,16 @@
     "start": "npm run populate && node ./bin/www"
   },
   "dependencies": {
-    "async": "^2.1.2",
-    "body-parser": "~1.15.2",
+    "async": "^2.6.1",
+    "body-parser": "~1.18.3",
     "cookie-parser": "~1.4.3",
-    "debug": "~2.2.0",
-    "elasticsearch": "^12.0.1",
-    "express": "~4.14.0",
-    "morgan": "~1.7.0",
-    "pug": "^2.0.0-beta6",
-    "request": "^2.78.0",
-    "winston": "^2.3.0"
+    "debug": "~4.1.0",
+    "elasticsearch": "^15.1.1",
+    "express": "~4.16.4",
+    "morgan": "~1.9.1",
+    "pug": "^2.0.3",
+    "request": "^2.88.0",
+    "winston": "^3.1.0"
   },
   "devDependencies": {
     "eslint": "^3.9.1",
